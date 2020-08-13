@@ -11,22 +11,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.fainberg.usermanagement.dao.UserDAO;
+import com.fainberg.usermanagement.model.User;
+
 /**
  * Servlet implementation class UserServlet
  */
 @WebServlet("/")
 public class UserServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public UserServlet() {
-        super();
-        // TODO Auto-generated constructor stub
+	
+	private static final long serialVersionUID = 1L;  
+    private UserDAO userDAO;
+
+    
+    public void init() {
+        userDAO = new UserDAO();
     }
 
-	
+    
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -45,7 +47,6 @@ public class UserServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-        
         String action = request.getServletPath();
 
         try {
@@ -73,6 +74,9 @@ public class UserServlet extends HttpServlet {
     
     
     private void usersList(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException, SQLException{
+    	List <User> allUsersList = userDAO.selectAllUsers();
+    	request.setAttribute("allUsersList", allUsersList);
+    	
     	RequestDispatcher dispatcher = request.getRequestDispatcher("views/list.jsp");
     	dispatcher.forward(request, response);
     }

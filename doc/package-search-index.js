@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.fainberg.usermanagement.model"},{"l":"com.fainberg.usermanagement.servlets"}]
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.fainberg.usermanagement.dao"},{"l":"com.fainberg.usermanagement.model"},{"l":"com.fainberg.usermanagement.servlets"}]
