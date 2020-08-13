@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"com.fainberg.usermanagement.model","l":"User"},{"p":"com.fainberg.usermanagement.servlets","l":"UserServlet"}]
